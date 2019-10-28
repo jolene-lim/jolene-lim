@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Mono:500|Source+Sans+Pro&display=swap');
 
 body{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 16px;
-	line-height: 115%;
+	line-height: 150%;
 	color: #000;
 }
 
@@ -137,7 +137,7 @@ article.home h3,
 article.home h4,
 article.home h5,
 article.home h6 {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Roboto Mono', monospace;
 	color: #D87B5B;
 }
 
@@ -162,7 +162,7 @@ article.home h4 a:hover {
 
 footer {
 	padding-top: 15px;
-	font-family: 'Raleway';
+	font-family: 'Roboto Mono', monospace;
 }
 
 /* nav-vertical-tabs component */
