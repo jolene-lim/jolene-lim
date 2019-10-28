@@ -3,17 +3,17 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	line-height: 18px;
-	color: #2c3e50;
+	line-height: 115%;
+	color: #000;
 }
 
 a {
-	text-decoration: bold;
+	text-decoration: none;
 	color: #008080;
 }
 
 a:hover {
-	text-decoration: bold;
+	text-decoration: none;
 	color: #DD1144;
 }
 
@@ -119,7 +119,7 @@ article{
 .post-date {
 	font-family: 'Lato', sans-serif;
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 article {
