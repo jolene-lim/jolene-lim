@@ -3,8 +3,18 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	align: justify;
+	line-height: 18px;
 	color: #2c3e50;
+}
+
+a {
+	text-decoration: bold;
+	color: #008080;
+}
+
+a:hover {
+	text-decoration: bold;
+	color: #DD1144;
 }
 
 .sidebar {
