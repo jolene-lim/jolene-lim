@@ -98,7 +98,7 @@ article .share .gplus:hover {
 	font-family: 'Lora', serif;
 	letter-spacing: 3px;
 	text-transform: uppercase;
-	color: #182B54;
+	color: #d87b5b;
 }
 
 @media only screen and (min-width: 768px) {
@@ -138,14 +138,14 @@ article.home h4,
 article.home h5,
 article.home h6 {
 	font-family: 'Lora', serif;
-	color: #D87B5B;
+	color: #182B54;
 }
 
 article.home h1 a,
 article.home h2 a,
 article.home h3 a,
 article.home h4 a {
-	color: #D87B5B;
+	color: #182B54;
 }
 article.home h1 a:hover,
 article.home h2 a:hover,
