@@ -16,7 +16,7 @@ defaults:
     values:
       title: paperstone
 
-description: social & spatial analytics
+description:
 author:
   name: jolene
   email: jolene.lim14@gmail.com
@@ -24,7 +24,7 @@ author:
 #  twitter: dbtek
 #  pinterest: asd123
   linkedin: jolene-lim-yuhui
-  bio: hobby coding + data analytics
+  bio: hobby coding + data analytics. interests in spatial data science, database structures & text mining.
 #  email_md5: 726351295ec82e145928582f595aa3aa
 
 # rss_path: feed.xml
