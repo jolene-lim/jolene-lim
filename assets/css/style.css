@@ -1,6 +1,7 @@
-@import url(//fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway:600&display=swap');
 
 body{
+	font-family: 'Open Sans', sans-serif;
 	color: #2c3e50;
 }
 
@@ -82,8 +83,7 @@ article .share .gplus:hover {
 }
 
 .page-header {
-	color: #e74c3c;
-	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+	color: #000;
 }
 
 @media only screen and (min-width: 768px) {
@@ -115,14 +115,14 @@ article.home div a, article.home pre a { color: #2c3e50; }
 article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
 article img { max-width: 100%; }
 
-h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Raleway', sans-serif; }
 article.home h1,
 article.home h2,
 article.home h3,
 article.home h4,
 article.home h5,
 article.home h6 {
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	color: #f2756a;
 }
 
@@ -146,7 +146,7 @@ article.home h4 a:hover {
 
 footer {
 	padding-top: 15px;
-	font-family: 'Ubuntu';
+	font-family: 'Raleway';
 }
 
 /* nav-vertical-tabs component */
