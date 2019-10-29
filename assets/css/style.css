@@ -52,6 +52,7 @@ a.nav-link:hover { color: #777; }
 #bio {
 	font-family: "Courier New", Courier, monospace;
 	font-size: 11px;
+	color: #fff;
 	margin: 0 auto;
 	margin-bottom: 10px;
 }
