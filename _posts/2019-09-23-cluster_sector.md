@@ -3,8 +3,7 @@ layout: post
 title: Cluster Analysis of Countries' Sectorial Value Add
 categories: [unsupervised learning]
 tags: [cluster analysis, R]
-fullview: true
-comments: true
+excerpt: true
 ---
 The "New International Division of Labour" is a term in economics used to describe the evolving structure of economic geography in the 1970s, produced by the globalization of firms. It suggests that global firms will opt to locate key functions (often industry-related, such as HQ, R&D) in wealthier countries with stronger talent pools, while leaving their ancillary services (often production, e.g. manufacturing) in less developed countries with a wider pool of low-wage workers.  
 
