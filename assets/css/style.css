@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Raleway|Lato|Lora|Source+Sans+Pro:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Lato|Lora|Source+Sans+Pro:300&display=swap');
 
 body{
 	font-family: 'Source Sans Pro', sans-serif;
@@ -139,7 +139,7 @@ article.home h4,
 article.home h5,
 article.home h6 {
 	font-family: 'Raleway', sans-serif;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 24px;
 	color: #182B54;
 }
@@ -156,6 +156,18 @@ article.home h3 a:hover,
 article.home h4 a:hover {
 	color: #D87B5B;
 	text-decoration: none;
+}
+
+article.posts h1,
+article.posts h2,
+article.posts h3,
+article.posts h4,
+article.posts h5,
+article.posts h6 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	color: #182B54;
 }
 
 .author .author-image {
