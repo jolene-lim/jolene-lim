@@ -27,3 +27,5 @@ The results from K-means clustering are indeed similar to that from hierarchical
 
 ## Data Information
 This project used World Bank data on the Value Added (% of GDP) dataset for the (1) Agriculture, Forestry and Mining, (2) Industry (including Construction), (3) Manufacturing, (4) Service datasets. The data used was from 2017 and only included complete cases (208 of 264). Missing data was not replaced as it is likely that data was missing not at random, but rather due to governmental stances on data reporting. 
+
+<b>The relevant Github repo for this can be found <a href="https://github.com/jolene-lim/cluster_valueadd">here</a>.</b>
