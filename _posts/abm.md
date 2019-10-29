@@ -1,0 +1,39 @@
+---
+layout: post 
+title: Agent-Based Modelling of School Enrollment
+categories: [agent-based modelling]
+tags: [R, Netlogo]
+fullview: true
+---
+
+Social behavior is often complex due to the heterogeneity of actor behavior and interests. Agent-based modelling, which simulates outputs based on rules of agent behavior, represents an interesting new method for social scientists to simulate real-world phenomena.  
+
+This project involves the creation of an ABM of the school enrollment process, aimed at understanding the impact of distance-priority policies on the mean distance children live from school and the overall satisfaction of parents. The model can be adapted to real-world parameters to give policymakers a sense of the optimal distance buffers, as well as the impact of parental concern on their enrollment decision-making.
+
+## The Model  
+![abm interface](https://raw.githubusercontent.com/jolene-lim/abm/master/abm_interface.JPG)  
+The model occurred in the spatial environment within the NetLogo world. However, the code can be adapted to a GIS environment to give real-world results.
+ 
+The SETUP procedure creates a population of parents and schools. Parents have a CONCERN factor (between 0 and 1), which represents how much they care about school rankings and is different for each parent. The concern factor in the formula is applied to distance as it represents a "discount" on distance. Hence, a lower factor is seen to represent more concern for rankings; in an extreme case, a parent with a factor of 0 would only care about rankings. They also have a first-choice property (the school with the lowest distance-decay score for them) and enrolled property (the school they are ultimately enrolled in). 
+
+Schools are given a rank, starting from 1 (“the best school”). They also have a SPACES property which is equal to user-defined CAPACITY initially, but decreases along the enrollment process to reflect the number of unfilled spaces left.   
+
+The GO procedure allows the enrollment process to begin. At the start of each round, unenrolled parents will bid for their first-choice school using a distance decay formula, `Distance (to school) * Concern + School’s Rank * 1.5` (1.5 applied to make units comparable). Parents will create an application to schools with spaces available with the lowest score based on this formula. 
+
+Schools will then first create enrollment links with parents within the DISTANCE-BUFFER. If there are still spaces in the school, schools will randomly create links with students, up to capacity. Each round ends after this is completed. 
+
+In subsequent round, parents will continue to bid for the school with the lowest distance-decay score, as long as it is available. Schools will then enroll them according to the rules above. The simulation is considered complete once either all schools have filled up their space, and/or all parents have enrolled in a school.
+
+## Analysis
+I was interested in the impact of the length of the distance buffer on (1) the mean distance children lived away from their schools and (2) overall satisfaction among parents, measured by proportion of parents who have enrolled in the school of their first choice.
+
+The ABM in NetLogo was repeated 20 times to derive the data. The analysis used output parameters averaged over the 20 repetitions.
+
+## Results
+![distance](https://raw.githubusercontent.com/jolene-lim/abm/master/CORRECTdist.jpg)  
+The results show that distance thresholds have a U-shaped relationship with mean distance. This is an important finding as it suggests that given real-world data, policy-makers can add quantitative rigour to their justifications of a distance buffer. 
+
+![satisfaction](https://raw.githubusercontent.com/jolene-lim/abm/master/CORRECT_SAT.jpg)  
+The results also suggest that larger distance thresholds result in higher proportions of satisfied parents. This is unsurprising, as larger distance thresholds would impose less limits on parents' chances in applying for the school of their preference.
+
+
