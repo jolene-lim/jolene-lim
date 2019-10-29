@@ -116,6 +116,7 @@ article .share .gplus:hover {
 }
 
 article{
+	text-align: justify;
 	margin-bottom: 40px;
 }
 
@@ -133,6 +134,7 @@ article{
 }
 
 article {
+	text-align: justify;
 	padding: 0 5% 0;
 }
 
