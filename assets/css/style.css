@@ -10,6 +10,7 @@ body{
 a {
 	text-decoration: none;
 	color: #008080;
+	font-weight: bold;
 }
 
 a:hover {
@@ -18,10 +19,10 @@ a:hover {
 }
 
 ::selection {
-  background: #d5d5d5;
+  background: #cccccc;
 }
 ::-moz-selection {
-  background: #d5d5d5;
+  background: #cccccc;
 }
 
 .sidebar {
@@ -211,6 +212,13 @@ footer {
 
 .nav-tabs-vertical>li>a {
     line-height: 1.428571429;
+    border: 1px solid transparent;
+    border-radius: 4px 0 0 4px;
+}
+
+.nav-tabs-vertical>li>a:hover {
+    line-height: 1.428571429;
+    background-color: #DD1144;
     border: 1px solid transparent;
     border-radius: 4px 0 0 4px;
 }
