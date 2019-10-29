@@ -18,10 +18,10 @@ a:hover, a:active {
 }
 
 ::selection {
-  background: #cccccc;
+  background: #f5f5f5;
 }
 ::-moz-selection {
-  background: #cccccc;
+  background: #f5f5f5;
 }
 
 .sidebar {
@@ -232,3 +232,6 @@ ul.dropdown-menu>li>a>i.fa {
     width: 1.3em;
 }
 
+ul.dropdown-menu>li>a:hover {
+    background-color: #DD1144;
+}
