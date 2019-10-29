@@ -10,7 +10,7 @@
 
 {% if site.author.bio %}
 <div id="bio" class="text-center">
-	<a href="{{ site.BASE_PATH }}/about.html"><span style="color: #fff"> about </span></a>
+	<a href="{{ site.BASE_PATH }}/{{ site.about_path }}"><span style="color: #fff"> about </span></a>
 </div>
 {% endif %}
 
@@ -19,7 +19,7 @@
 		{% if site.author.github %}
 		<li>
 			<a class="btn btn-default btn-sm" href="https://github.com/{{ site.author.github }}">
-				<i class="fa fa-github-alt fa-lg"></i>
+				<i class="fa fa-github fa-lg"></i>
 			</a>
 		</li>
 		{% endif %}
