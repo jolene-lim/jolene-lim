@@ -28,6 +28,7 @@ author:
 #  email_md5: 726351295ec82e145928582f595aa3aa
 
 # rss_path: feed.xml
+about_path: about.html
 categories_path: categories.html
 tags_path: tags.html
 
