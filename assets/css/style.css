@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:700|Lato:300|Lora|Source+Sans+Pro:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:700|Lato:300,500|Lora|Source+Sans+Pro:300&display=swap');
 
 body{
 	font-family: 'Source Sans Pro', sans-serif;
@@ -15,6 +15,13 @@ a {
 a:hover {
 	text-decoration: none;
 	color: #DD1144;
+}
+
+::selection {
+  background: #f1e8e8;
+}
+::-moz-selection {
+  background: #f1e8e8;
 }
 
 .sidebar {
@@ -113,13 +120,14 @@ article{
 }
 
 .article_body{
+	text-align: justify;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
 .post-date {
 	font-family: 'Lato', sans-serif;
-	font-weight: 400;
+	font-weight: 500;
 	text-transform: uppercase;
 	font-size: 16px;
 }
@@ -179,6 +187,7 @@ article.posts h6 {
 footer {
 	padding-top: 15px;
 	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 }
 
 /* nav-vertical-tabs component */
