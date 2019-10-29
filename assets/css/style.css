@@ -215,13 +215,6 @@ footer {
     border-radius: 4px 0 0 4px;
 }
 
-.nav-tabs-vertical>li>a:hover {
-    line-height: 1.428571429;
-    background-color: #DD1144;
-    border: 1px solid transparent;
-    border-radius: 4px 0 0 4px;
-}
-
 .badge { background: #F2756A; }
 
 #nav-menu{
