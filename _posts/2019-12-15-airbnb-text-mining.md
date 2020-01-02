@@ -155,3 +155,5 @@ This project still has many improvements to make, but was a good way for me to p
 
 # Credits
 The raw data came from [Inside Airbnb](http://insideairbnb.com/get-the-data.html). I used the `nrc` sentiments dataset for this analysis. 
+
+<b>The relevant Github repo for this can be found [here](https://github.com/jolene-lim/personal_projects/tree/master/airbnb_text_mining).</b>
