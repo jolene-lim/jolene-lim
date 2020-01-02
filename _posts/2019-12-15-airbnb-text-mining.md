@@ -5,6 +5,7 @@ categories: [Natural Language Processing, Spatial Analysis, Data Visualization]
 tags: [R]
 description: What do Airbnb reviews reveal to us about holiday-rental property?
 always_allow_html: yes
+leafletmap: true
 ---
 
 # Topic Modelling
