@@ -20,11 +20,32 @@ To answer the question, we perform Latent Dirichlet Allocation (LDA) on the revi
 
 The topics seem all touch on themes I would have expected, namely quality of the apartment, location, and check-in/host interactions. Rather, the topics seem to reveal the different priorities of guests, as such:
 
-| Topic | Priorities | Indicative Keywords |
-| :---: | :--- | :--- |
-| 1 | Location + Host | location, host, subway, convenient, communication |
-| 2 | Location + Space + Host | location, clean, kitchen, check, friendly |
-| 3 | Location + Space | subway, nyc, restaurants, bathroom |
+<table class="table table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th align="center">Topic</th>
+<th align="left">Priorities</th>
+<th align="left">Indicative Keywords</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left">Location + Host</td>
+<td align="left">location, host, subway, convenient, communication</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">Location + Space + Host</td>
+<td align="left">location, clean, kitchen, check, friendly</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">Location + Space</td>
+<td align="left">subway, nyc, restaurants, bathroom</td>
+</tr>
+</tbody>
+</table>
 
 To confirm these, the differences between topics are also checked. 
 
