@@ -45,7 +45,78 @@ What are the most common sentiments expressed in reviews, and how might it diffe
 
 Overall, top 10 most common sentiments (and a common word associated with it) are:
 
-![Common sentiments](https://raw.githubusercontent.com/jolene-lim/personal_projects/master/airbnb_text_mining/sentiment_table.PNG)
+<table class="table table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Sentiment
+</th>
+<th style="text-align:right;">
+No. of Reviews
+</th>
+<th style="text-align:left;">
+Common Word
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+positive
+</td>
+<td style="text-align:right;">
+362613
+</td>
+<td style="text-align:left;">
+clean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trust
+</td>
+<td style="text-align:right;">
+233023
+</td>
+<td style="text-align:left;">
+clean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+joy
+</td>
+<td style="text-align:right;">
+182969
+</td>
+<td style="text-align:left;">
+clean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+anticipation
+</td>
+<td style="text-align:right;">
+138240
+</td>
+<td style="text-align:left;">
+time
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+negative
+</td>
+<td style="text-align:right;">
+57545
+</td>
+<td style="text-align:left;">
+hidden
+</td>
+</tr>
+</tbody>
+</table>
 
 Unsurprisingly, an overwhelming amount of the sentiments are positive ones.
 
