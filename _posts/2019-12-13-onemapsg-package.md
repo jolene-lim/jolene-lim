@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OneMapSG API: An R Client Wrapper!
+title: OneMapSG API; An R Client Wrapper!
 categories: [API, Data Wrangling, Parallel Computing]
 tags: [R]
 ---
