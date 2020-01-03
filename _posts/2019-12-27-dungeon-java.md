@@ -29,3 +29,7 @@ _5 vampires down, 5 to go!_
 After the set number of moves, if there are still vampires left, the game prints "YOU LOSE". If a player is able to carefully count their steps and kill all the vampires, he wins!
 
 ![game_end](https://raw.githubusercontent.com/jolene-lim/personal_projects/master/java_apps/dungeon_game/dungeon_interface/game_end.PNG)
+
+This was definitely a pretty simple game but it was harder to create than I initially thought!
+
+*The relevant Github repo can be found [here](https://jolene-lim.github.io/software%20development/2019/12/27/dungeon-java.html)
