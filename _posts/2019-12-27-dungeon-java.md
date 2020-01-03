@@ -32,4 +32,4 @@ After the set number of moves, if there are still vampires left, the game prints
 
 This was definitely a pretty simple game but it was harder to create than I initially thought!
 
-*The relevant Github repo can be found [here](https://github.com/jolene-lim/personal_projects/tree/master/java_apps/dungeon_game)
+**The relevant Github repo can be found [here](https://github.com/jolene-lim/personal_projects/tree/master/java_apps/dungeon_game)**
