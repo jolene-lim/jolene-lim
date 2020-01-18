@@ -8,6 +8,7 @@ group: navigation
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tag_words = site_tags | split:',' | sort %}
 
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~jolenelim14/3.embed"></iframe>
 
 <div class="col-sm-3 col-xs-6">
     <ul class="nav nav-tabs-vertical cat-tag-menu">
