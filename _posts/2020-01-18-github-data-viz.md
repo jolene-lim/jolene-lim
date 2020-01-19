@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tutorial: Visualizing my Github repo with Python Plotly
+title: Tutorial; Visualizing my Github repo with Python Plot.ly
 categories: [Data Visualization]
 tags: [Python]
 ---
@@ -89,4 +89,4 @@ If you are using Juypter notebook, `py.iplot` would be a better option as it wou
 
 I hope this helps beginners like me create an interactive plot for their website! Although this was pretty simple, it was difficult for a beginner like myself to gather all the instructions necessary, especially with the recent changes to Plot.ly.
 
-The relevant Github repo can be found [here](https://github.com/jolene-lim/personal_projects/tree/master/github_api).
+**The relevant Github repo can be found [here](https://github.com/jolene-lim/personal_projects/tree/master/github_api).**
