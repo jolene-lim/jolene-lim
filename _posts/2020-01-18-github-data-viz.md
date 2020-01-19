@@ -11,14 +11,13 @@ At the end of this tutorial, you should be able to create a widget like below. T
 <p align="center"><iframe width="400px" height="400px" frameborder="0" scrolling="no" src="//plot.ly/~jolenelim14/3.embed"></iframe></p>
 
 ## Setup
-Note that in order to be able to host a public graph, users first need to create a Plot.ly account [here](https://plot.ly/api_signup). We would also need to store the authentication variables in our environment. Run this code chunk in your <u>console</u> (note: do NOT include in the script, unless you don't plan to share your code!), replacing the `username` and `api_key` fields.
+Note that in order to be able to host a public graph, users first need to create a Plot.ly account [here](https://plot.ly/api_signup). We would also need to store the authentication variables in our environment. Run this code chunk in your <u>console</u> (NOTE: make sure not to include the code in any scripts you will be sharing!), replacing the `username` and `api_key` fields.
 ```python
 import chart_studio
-chart_studio.tools.set_credentials_file(username='DemoAccount', api_key='lr1c37zw81')
+chart_studio.tools.set_credentials_file(username = 'DemoAccount', api_key = 'lr1c37zw81')
 ```
 
 ## Query API
-Now we are ready to start plotting! 
 
 First, we need to load the relevant libraries:
 ```python
@@ -45,7 +44,7 @@ else:
     languages = pd.DataFrame.from_dict(languages.json(), orient = 'index', columns = ['n_byte'])
 ```
 
-The code also checks for errors in case of a bad request. Note that the API query should follow the format "https://api.github.com/repos/:user/:repo/languages".
+The code also checks for errors in case of a bad request. Note that the API query should follow the format `https://api.github.com/repos/:user/:repo/languages`.
 
 ## Visualizing
 We are now ready to visualize our data! As I have mentioned, plot.ly actually requires our data in list format rather than as dataframes. Below, I convert my pd columns into lists.
@@ -65,7 +64,7 @@ colors = []
 for lang in labels:
     colors.append(langColors[lang])
 ```
-Hence, all we need to do is parse the JSON object already created for us as a dictionary, and use the necessary colours.
+Hence, all we need to do is parse the JSON object already created for us as a dictionary, and add the necessary colours to a new list.
 
 Finally, we are ready to plot!
 
