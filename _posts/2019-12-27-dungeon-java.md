@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Escape a Dungeon of Vampires!
-categories: [Software Development]
+categories: [Applications]
 tags: [Java]
 ---
 
@@ -9,7 +9,7 @@ I have recently started learning to code in Java, with the end-goal being gettin
 
 Below is an example of what users will see when starting the program in a terminal as such:
 
-```
+```shell
 java -jar dungeon_game.jar
 ```
 
