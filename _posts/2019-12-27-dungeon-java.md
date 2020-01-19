@@ -9,7 +9,7 @@ I have recently started learning to code in Java, with the end-goal being gettin
 
 Below is an example of what users will see when starting the program in a terminal as such:
 
-```java
+```
 java -jar dungeon_game.jar
 ```
 
