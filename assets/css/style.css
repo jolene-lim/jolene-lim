@@ -1,4 +1,4 @@
-@import url(github.css)
+@import url(github.css);
 @import url('https://fonts.googleapis.com/css?family=Raleway:700|Lato:300,700|Lora|Source+Sans+Pro:300&display=swap');
 
 body{
@@ -190,6 +190,28 @@ article.posts h6 {
 .author .author-image {
   float: left;
   margin-right: 20px;
+}
+
+pre,
+code {
+    border: 1px solid #F6F8FA;
+    border-radius: 3px;
+    background-color: #F6F8FA;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 footer {
