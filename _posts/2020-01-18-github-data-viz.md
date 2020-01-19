@@ -12,7 +12,7 @@ At the end of this tutorial, you should be able to create a widget like below. T
 
 ## Setup
 Note that in order to be able to host a public graph, users first need to create a Plot.ly account [here](https://plot.ly/api_signup). We would also need to store the authentication variables in our environment. Run this code chunk in your <u>console</u> (note: do NOT include in the script, unless you don't plan to share your code!), replacing the `username` and `api_key` fields.
-```
+```python
 import chart_studio
 chart_studio.tools.set_credentials_file(username='DemoAccount', api_key='lr1c37zw81')
 ```
@@ -21,7 +21,7 @@ chart_studio.tools.set_credentials_file(username='DemoAccount', api_key='lr1c37z
 Now we are ready to start plotting! 
 
 First, we need to load the relevant libraries:
-```
+```python
 # import libraries
 import json
 import requests
@@ -32,7 +32,7 @@ import plotly.graph_objects as go
 
 Next, we need to query the Github API and parse the response into a suitable format for plotting. I am converting it to a pandas dataframe for practice, but plot.ly does not require this format; it simply requires values and labels to be in lists.
 
-```
+```python
 # query github api
 languages = requests.get("https://api.github.com/repos/jolene-lim/personal_projects/languages")
 
@@ -50,14 +50,14 @@ The code also checks for errors in case of a bad request. Note that the API quer
 ## Visualizing
 We are now ready to visualize our data! As I have mentioned, plot.ly actually requires our data in list format rather than as dataframes. Below, I convert my pd columns into lists.
 
-```
+```python
 labels = list(languages.index)
 values = languages['n_byte'].tolist()
 ```
 
 Almost there! Now, as an added feature, I wanted my chart to follow the colour scheme used by github. Full credit goes to Github user [Diastro](https://github.com/Diastro/github-colors) for scraping the data for us!
 
-```
+```python
 ## create colour scheme according to github
 langColors = requests.get("https://raw.githubusercontent.com/Diastro/github-colors/master/github-colors.json").json()
 
@@ -69,7 +69,7 @@ Hence, all we need to do is parse the JSON object already created for us as a di
 
 Finally, we are ready to plot!
 
-```
+```python
 fig = go.Figure(go.Pie(labels = labels, values = values,
              hole = 0.3, marker_colors = colors))
 
