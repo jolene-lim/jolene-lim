@@ -1,8 +1,10 @@
+@import url("github.css");
 @import url('https://fonts.googleapis.com/css?family=Raleway:700|Lato:300,700|Lora|Source+Sans+Pro:300&display=swap');
 
 body{
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 16px;
+	font-weight: 300;
 	line-height: 150%;
 	color: #000;
 }
@@ -189,6 +191,12 @@ article.posts h6 {
 .author .author-image {
   float: left;
   margin-right: 20px;
+}
+
+.highlight pre {
+  border: none;
+  background: #F6F8FA;
+  margin: 0;
 }
 
 footer {
