@@ -24,17 +24,8 @@ The output of the program first asks users for some input parameters.
 
 If all is set up successfully, the program will produce a map like this (made using Folium):
 
-<style>
-  #map_89d9655134c54491a09772239bcfbbc0 {
-    position: relative;
-    width: 100.0%;
-    height: 100.0%;
-    left: 0.0%;
-    top: 0.0%;
-  }
-</style>
 <div class="folium-map" id="map_89d9655134c54491a09772239bcfbbc0" ></div>
-<script>    
+<script data-for = "map_89d9655134c54491a09772239bcfbbc0">    
     
             var map_89d9655134c54491a09772239bcfbbc0 = L.map(
                 "map_89d9655134c54491a09772239bcfbbc0",
