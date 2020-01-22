@@ -23,6 +23,8 @@ The output of the program first asks users for some input parameters.
 
 If all is set up successfully, the program will produce a map like this (made using Folium):
 
+<iframe src = "https://raw.githubusercontent.com/jolene-lim/personal_projects/master/google-OR/route_planning.html"></iframe>
+
 In this case, as the max distance is greater than 7000, the program instead suggests having less volunteers but each doing a significant amount of work. This can be better tuned by adding in waiting time constraints, which I hope to add into the module. 
 
 If no solution is found, the program will print:
