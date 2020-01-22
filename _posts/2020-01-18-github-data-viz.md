@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tutorial; Visualizing my Github repo with Python Plot.ly
-categories: [Data Visualization]
+categories: [API, Data Visualization]
 tags: [Python]
 ---
 
