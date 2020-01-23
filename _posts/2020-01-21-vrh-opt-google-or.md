@@ -25,7 +25,6 @@ The output of the program first asks users for some input parameters.
 If all is set up successfully, the program will produce a map like this (made using Folium):
 
 <iframe style = "position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;">
-    <html>
     #document
         <!DOCTYPE html>
     <head>    
@@ -474,7 +473,6 @@ If all is set up successfully, the program will produce a map like this (made us
             );
         </script> 
     </body>
-</html>
 </iframe>
 
 
