@@ -15,16 +15,39 @@ In this case, I chose Beyond Social Services, a VWO that I've worked with before
 
 The output of the program first asks users for some input parameters.
 
-```shell
->>> How many volunteers:
->>> 5
->>> Max distance(m) for each volunteer:
->>> 8000
+```
+How many volunteers:
+<i>5</i>
+Max distance(m) for each volunteer:
+<i>8000</i>
 ```
 
 If all is set up successfully, the program will produce a map like this (made using Folium):
 
 <iframe src = "https://rawcdn.githack.com/jolene-lim/personal_projects/master/google-OR/route_planning.html" width = "100%" height = "350px"></iframe>
+
+It would also print an output:
+```
+Route for vehicle 0:
+ 0 -> 0
+Distance of the route: 0m
+
+Route for vehicle 1:
+ 0 ->  6 ->  2 ->  11 ->  10 ->  3 -> 0
+Distance of the route: 7929m
+
+Route for vehicle 2:
+ 0 ->  1 ->  7 ->  9 ->  14 ->  15 ->  4 -> 0
+Distance of the route: 7271m
+
+Route for vehicle 3:
+ 0 ->  8 ->  13 ->  12 ->  5 -> 0
+Distance of the route: 7486m
+
+Route for vehicle 4:
+ 0 -> 0
+Distance of the route: 0m
+```
 
 In this case, as the max distance is greater than 7000, the program instead suggests having less volunteers but each doing a significant amount of work. This can be better tuned by adding in waiting time constraints, which I hope to add into the module. 
 
