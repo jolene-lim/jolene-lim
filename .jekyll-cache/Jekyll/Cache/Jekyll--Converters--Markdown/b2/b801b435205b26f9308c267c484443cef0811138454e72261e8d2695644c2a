@@ -1,0 +1,148 @@
+I"<h1 id="topic-modelling">Topic Modelling</h1>
+<p>The question: What are the most common topics discussed in reviews, and how might it differ by listing type?</p>
+
+<p>To answer the question, we perform Latent Dirichlet Allocation (LDA) on the reviews data. We allow for 3 topics.</p>
+
+<p><img src="https://raw.githubusercontent.com/jolene-lim/personal_projects/master/airbnb_text_mining/airbnb_text_mining_files/figure-html/unnamed-chunk-7-1.png" alt="LDA Topics" /></p>
+
+<h2 id="what-are-the-types-of-topics-found-in-airbnb-reviews">What are the types of topics found in AirBnb reviews?</h2>
+
+<p>The topics seem all touch on themes I would have expected, namely quality of the apartment, location, and check-in/host interactions. Rather, the topics seem to reveal the different priorities of guests, as such:</p>
+
+<table class="table table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th align="center">Topic</th>
+<th align="left">Priorities</th>
+<th align="left">Indicative Keywords</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left">Location + Host</td>
+<td align="left">location, host, subway, convenient, communication</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">Location + Space + Host</td>
+<td align="left">location, clean, kitchen, check, friendly</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">Location + Space</td>
+<td align="left">subway, nyc, restaurants, bathroom</td>
+</tr>
+</tbody>
+</table>
+
+<p>To confirm these, the differences between topics are also checked.</p>
+
+<p><img src="https://raw.githubusercontent.com/jolene-lim/personal_projects/master/airbnb_text_mining/airbnb_text_mining_files/figure-html/unnamed-chunk-8-1.png" alt="Topic differences" /></p>
+
+<p>Topic 1 clearly does seem to pertain more to the host than Topic 2 and Topic 3, which both focus more on location. Topic 2 also relates more to the host than in Topic 3.</p>
+
+<h2 id="do-the-types-of-topics-relate-to-the-type-of-listings">Do the types of topics relate to the type of listings?</h2>
+
+<p>First I want to examine the frequency of each topic is different by the number of people accomodated in the listing. I expect some differences may exist, e.g. larger spaces might be meant for families who value the space and host more (hence more topic 2).</p>
+
+<p><img src="https://raw.githubusercontent.com/jolene-lim/personal_projects/master/airbnb_text_mining/airbnb_text_mining_files/figure-html/unnamed-chunk-10-1.png" alt="Topics vs No. of People Accomodated" /></p>
+
+<p>Unfortuntately, there aren’t any discernable patterns. The only thing of note is that on average, the proportion of Topic 2 is higher among smaller apartments. This is likely to be the case simply as most  guests stay in smaller apartments and Topic 2 concerns all the basic issues guests care about.</p>
+
+<h1 id="sentiment-analysis">Sentiment Analysis</h1>
+<p>What are the most common sentiments expressed in reviews, and how might it differ by listing type?</p>
+
+<p>Overall, top 10 most common sentiments (and a common word associated with it) are:</p>
+
+<table class="table table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Sentiment
+</th>
+<th style="text-align:right;">
+No. of Reviews
+</th>
+<th style="text-align:left;">
+Common Word
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+positive
+</td>
+<td style="text-align:right;">
+362613
+</td>
+<td style="text-align:left;">
+clean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trust
+</td>
+<td style="text-align:right;">
+233023
+</td>
+<td style="text-align:left;">
+clean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+joy
+</td>
+<td style="text-align:right;">
+182969
+</td>
+<td style="text-align:left;">
+clean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+anticipation
+</td>
+<td style="text-align:right;">
+138240
+</td>
+<td style="text-align:left;">
+time
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+negative
+</td>
+<td style="text-align:right;">
+57545
+</td>
+<td style="text-align:left;">
+hidden
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Unsurprisingly, an overwhelming amount of the sentiments are positive ones.</p>
+
+<p>Is the proportion of negative sentiments related to location of listing?</p>
+
+<iframe src="https://rawcdn.githack.com/jolene-lim/personal_projects/master/airbnb_text_mining/sentiment_map.html" width="100%" height="350px"></iframe>
+
+<p>The average proportion of negative sentiments is higher in the more populated neighborhoods. This suggests that negative sentiments may be associated with small spaces or noisy areas. Nonetheless, it’s worth noting that the proportion of negative sentiments is roughly similar across neighborhoods.</p>
+
+<h1 id="conclusions--reflections">Conclusions + Reflections!</h1>
+<p>The results of the topic modelling process was not very clear. This might be because from the beginning, there are not that many discernable issues raised in reviews– most will cover issues around the location, host and quality of the space.</p>
+
+<p>This project still has many improvements to make, but was a good way for me to practice multiple skills I’ve gained over my course. First, LDA using different Ks may be more useful to explore the presence of different topics. Moreover, for sentiment analysis, a custom dictionary relating to property may be useful– for example, “hidden” is regarded as negative, but for property this may not be the case. Or, one error I noticed is that toilet was given a negative sentiment (disgusting), although this might have even been brought up as a positive point in the review. Nonetheless, this reflects the limitations of sentiment analysis, and more broadly, the field of NLP currently.</p>
+
+<h1 id="credits">Credits</h1>
+<p>The raw data came from <a href="http://insideairbnb.com/get-the-data.html">Inside Airbnb</a>. I used the <code class="highlighter-rouge">nrc</code> sentiments dataset for this analysis.</p>
+
+<p><b>The relevant Github repo for this can be found <a href="https://github.com/jolene-lim/personal_projects/tree/master/airbnb_text_mining">here</a>.</b></p>
+:ET

@@ -3,7 +3,8 @@ layout: post
 title: Data for Good; Vehicle Routing Problem with Google OR Tools
 categories: [Optimization, API, Data Visualization]
 tags: [Python]
-leafletmap: true
+featured: true
+iframe: https://rawcdn.githack.com/jolene-lim/personal_projects/master/google-OR/route_planning.html
 description: How can we best allocate volunteers to home visits?
 ---
 

@@ -1,0 +1,2 @@
+I"2<p>I thought it would be fun to create a little interactive chart for my site, displaying the breakdown of my projects by programming languages used. To challenge myself, I decided to learn to query the GitHub API through Python and use the <a href="https://chart-studio.plot.ly/feed/#/">Plot.ly library</a> to create an interactive chart from it - something I am able to do in R, but not yet in Python. The steps to create it were a bit more confusing than I thought, hence I thought I’d document this project as a tutorial for other newbies like myself!</p>
+:ET

@@ -1,0 +1,79 @@
+I"�&<p>I thought it would be fun to create a little interactive chart for my site, displaying the breakdown of my projects by programming languages used. To challenge myself, I decided to learn to query the GitHub API through Python and use the <a href="https://chart-studio.plot.ly/feed/#/">Plot.ly library</a> to create an interactive chart from it - something I am able to do in R, but not yet in Python. The steps to create it were a bit more confusing than I thought, hence I thought I’d document this project as a tutorial for other newbies like myself!</p>
+
+<p>At the end of this tutorial, you should be able to create a widget like below. The cool thing is, the colour scheme matches what Github uses too!</p>
+<p align="center"><iframe width="400px" height="400px" frameborder="0" scrolling="no" src="//plot.ly/~jolenelim14/3.embed"></iframe></p>
+
+<h2 id="setup">Setup</h2>
+<p>Note that in order to be able to host a public graph, users first need to create a Plot.ly account <a href="https://plot.ly/api_signup">here</a>. We would also need to store the authentication variables in our environment. Run this code chunk in your <u>console</u> (NOTE: make sure not to include the code in any scripts you will be sharing!), replacing the <code class="highlighter-rouge">username</code> and <code class="highlighter-rouge">api_key</code> fields.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">chart_studio</span>
+<span class="n">chart_studio</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">set_credentials_file</span><span class="p">(</span><span class="n">username</span> <span class="o">=</span> <span class="s">'DemoAccount'</span><span class="p">,</span> <span class="n">api_key</span> <span class="o">=</span> <span class="s">'lr1c37zw81'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="query-api">Query API</h2>
+
+<p>First, we need to load the relevant libraries:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import libraries
+</span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">chart_studio.plotly</span> <span class="k">as</span> <span class="n">py</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="n">go</span>
+</code></pre></div></div>
+
+<p>Next, we need to query the Github API and parse the response into a suitable format for plotting. I am converting it to a pandas dataframe for practice, but plot.ly does not require this format; it simply requires values and labels to be in lists.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># query github api
+</span><span class="n">languages</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.github.com/repos/jolene-lim/personal_projects/languages"</span><span class="p">)</span>
+
+<span class="c1"># error handling
+</span><span class="k">if</span> <span class="n">languages</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The response returned an error. Status code: "</span> <span class="o">+</span> <span class="n">languages</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+
+<span class="c1"># else parse JSON to dataframe
+</span><span class="k">else</span><span class="p">:</span>
+    <span class="n">languages</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">languages</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span> <span class="n">orient</span> <span class="o">=</span> <span class="s">'index'</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">'n_byte'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>The code also checks for errors in case of a bad request. Note that the API query should follow the format <code class="highlighter-rouge">https://api.github.com/repos/:user/:repo/languages</code>.</p>
+
+<h2 id="visualizing">Visualizing</h2>
+<p>We are now ready to visualize our data! As I have mentioned, plot.ly actually requires our data in list format rather than as dataframes. Below, I convert my pd columns into lists.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">languages</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">languages</span><span class="p">[</span><span class="s">'n_byte'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Almost there! Now, as an added feature, I wanted my chart to follow the colour scheme used by github. Full credit goes to Github user <a href="https://github.com/Diastro/github-colors">Diastro</a> for scraping the data for us!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">## create colour scheme according to github
+</span><span class="n">langColors</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://raw.githubusercontent.com/Diastro/github-colors/master/github-colors.json"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
+    <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">langColors</span><span class="p">[</span><span class="n">lang</span><span class="p">])</span>
+</code></pre></div></div>
+<p>Hence, all we need to do is parse the JSON object already created for us as a dictionary, and add the necessary colours to a new list.</p>
+
+<p>Finally, we are ready to plot!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Pie</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span>
+             <span class="n">hole</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">marker_colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'text'</span><span class="p">:</span> <span class="s">"Programming Languages Used (Bytes)"</span><span class="p">,</span>
+        <span class="s">'y'</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="s">'x'</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s">'xanchor'</span><span class="p">:</span> <span class="s">'center'</span><span class="p">,</span>
+        <span class="s">'yanchor'</span><span class="p">:</span> <span class="s">'top'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">py</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">'github-languages'</span><span class="p">,</span> <span class="n">sharing</span> <span class="o">=</span> <span class="s">'public'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If you are using Juypter notebook, <code class="highlighter-rouge">py.iplot</code> would be a better option as it would result in an interactive plot. I was using PyCharm and after executing the code successfully, was redirected to where my plot was hosted. From there, simply click ‘Share’ to get the embedding code needed to add your graph to your website.</p>
+
+<p>I hope this helps beginners like me create an interactive plot for their website! Although this was pretty simple, it was difficult for a beginner like myself to gather all the instructions necessary, especially with the recent changes to Plot.ly.</p>
+
+<p><strong>The relevant Github repo can be found <a href="https://github.com/jolene-lim/personal_projects/tree/master/github_api">here</a>.</strong></p>
+:ET

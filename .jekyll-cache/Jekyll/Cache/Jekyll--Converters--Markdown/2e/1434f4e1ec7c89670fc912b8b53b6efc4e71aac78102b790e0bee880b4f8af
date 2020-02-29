@@ -1,0 +1,13 @@
+I"&<p>I created an R package! As part of a final project for school, I wrote an R package that would allow users to easily query the <a href="https://docs.onemap.sg/">OneMap SG API</a>, which is created by the Singapore Land Authority and offers users the ability to query a lot of useful data.</p>
+
+<p><strong>The full package and documentation can be found <a href="https://github.com/jolene-lim/onemapsgapi">here</a>.</strong> It passes all CRAN-R checks and is ready for use :-) Although the documentation provides more detail, below are some of the features of the package:</p>
+
+<ul>
+  <li><strong>Returns easy-to-use formats</strong>: Although the default output of the API call is a JSON object, the package functions return dataframes, the most common data structures R users work with (while allowing users the option to simply get raw JSONs).</li>
+  <li><strong>User friendliness through built-in regex</strong>: Some API calls return a lot of data, which may not be relevant to the user. Where appropriate, the functions allow users to input search terms and internally uses regular expressions to filter relevant records.</li>
+  <li><strong>Built-in data wrangling</strong>: Where output may be useful in either long or wide formats, depending on user objective, functions provide parameters for users to indicate if the output should be long or wide. All necessary data wrangling will be done within the function.</li>
+  <li><strong>Parallel computing functionality</strong>: Some functions handle iterative API calls. In cases where there will be a large number of calls are needed to be made, functions will allow a parallel computing option to speed up the return of an output.</li>
+</ul>
+
+<p>In the future, I also hope to add in more functions and do a full coverage of all the API endpoints provided by OneMap.</p>
+:ET

@@ -1,0 +1,53 @@
+I"f<p>When I attended the Spatial Data Science Conference 2019, I was very inspired by <a href="https://www.datakind.org/">DataKind’s</a> presentation, where they shared how they used optimization to help a non-profit optimize their operations. The project allowed real-time updates and was using completely open-source tools, which was amazing. Among those, they mentioned using <a href="https://developers.google.com/optimization">Google OR tools</a> as a solver for the optimization problem.</p>
+
+<p>I thought it would be cool to create a mini-project that similarly solves a problem for social good. I also made use of the chance to practice my Python skills and querying data from APIs. The question I worked with is: <strong>For a given voluntary welfare organisation and a set of addresses for home visits, how can we best assign the routes of volunteers?</strong></p>
+
+<p>In this case, I chose Beyond Social Services, a VWO that I’ve worked with before; its location was scraped using the <a href="https://docs.onemap.sg/">OneMap API</a>. I also decided to use the 15 blocks in the area with the highest amount of rental housing (low-income subsidised flats); the data was queried from the <a href="https://data.gov.sg/developer">Data.gov.sg API</a>. The output of this program will best assign routes to volunteers.</p>
+
+<p>The output of the program first asks users for some input parameters.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>How many volunteers:
+&lt;i&gt;5&lt;/i&gt;
+Max distance(m) for each volunteer:
+&lt;i&gt;8000&lt;/i&gt;
+</code></pre></div></div>
+
+<p>If all is set up successfully, the program will produce a map like this (made using Folium):</p>
+
+<iframe src="https://rawcdn.githack.com/jolene-lim/personal_projects/master/google-OR/route_planning.html" width="100%" height="350px"></iframe>
+
+<p>It would also print an output:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Route for vehicle 0:
+ 0 -&gt; 0
+Distance of the route: 0m
+
+Route for vehicle 1:
+ 0 -&gt;  6 -&gt;  2 -&gt;  11 -&gt;  10 -&gt;  3 -&gt; 0
+Distance of the route: 7929m
+
+Route for vehicle 2:
+ 0 -&gt;  1 -&gt;  7 -&gt;  9 -&gt;  14 -&gt;  15 -&gt;  4 -&gt; 0
+Distance of the route: 7271m
+
+Route for vehicle 3:
+ 0 -&gt;  8 -&gt;  13 -&gt;  12 -&gt;  5 -&gt; 0
+Distance of the route: 7486m
+
+Route for vehicle 4:
+ 0 -&gt; 0
+Distance of the route: 0m
+</code></pre></div></div>
+
+<p>In this case, as the max distance is greater than 7000, the program instead suggests having less volunteers but each doing a significant amount of work. This can be better tuned by adding in waiting time constraints, which I hope to add into the module.</p>
+
+<p>If no solution is found, the program will print:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> No solution found :<span class="o">(</span> Try adjusting parameters
+</code></pre></div></div>
+
+<p>This project was also coded in a way which allows users to input their own origin and destination locations; the <code class="highlighter-rouge">visualization.py</code> and <code class="highlighter-rouge">main.py</code> scripts can run independently of the <code class="highlighter-rouge">data_import.py</code> script, so long as the users input data in a similar format. I referenced the <a href="https://developers.google.com/optimization/routing/vrp">Google OR Tools VRP Guide</a> a lot and give the awesome guide full credit for the optimization side of things!</p>
+
+<p>In the future, I would like to build this into a proper web app that can handle more constraints and am excited to further work with OR tools :-)</p>
+
+<p><strong>If anyone is interested in how to build a similar module, the links to my code can be found <a href="https://github.com/jolene-lim/personal_projects/tree/master/google-OR">here</a></strong></p>
+:ET

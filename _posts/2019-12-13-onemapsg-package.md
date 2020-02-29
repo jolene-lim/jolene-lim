@@ -3,6 +3,7 @@ layout: post
 title: OneMapSG API; An R Client Wrapper!
 categories: [API, Data Wrangling, Parallel Computing]
 tags: [R]
+featured: true
 ---
 
 I created an R package! As part of a final project for school, I wrote an R package that would allow users to easily query the [OneMap SG API](https://docs.onemap.sg/), which is created by the Singapore Land Authority and offers users the ability to query a lot of useful data. 

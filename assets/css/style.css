@@ -188,6 +188,13 @@ article.posts h6 {
 	color: #182B54;
 }
 
+.article-img {
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 60%;
+}
+
 .author .author-image {
   float: left;
   margin-right: 20px;
