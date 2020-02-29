@@ -24,6 +24,12 @@ tagline:
   </h2>
 
   <div>
+    {% if post.image %}
+    <img src="{{ post.image }}" alt="{{ post.title }}" title="{{ post.title }}">
+    {% endif %}
+  </div>
+
+  <div>
     {% if post.fullview %}
     {{ post.content }}
     {% else %}
