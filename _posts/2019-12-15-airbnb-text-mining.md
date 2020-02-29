@@ -4,6 +4,7 @@ title: Text analysis of AirBnb Reviews
 categories: [Unsupervised learning, Natural Language Processing, Spatial Analysis, Data Visualization]
 tags: [R]
 description: What do Airbnb reviews reveal to us about holiday-rental property?
+image: https://raw.githubusercontent.com/jolene-lim/personal_projects/master/airbnb_text_mining/airbnb_text_mining_files/figure-html/unnamed-chunk-7-1.png
 always_allow_html: yes
 output: github_document
 leafletmap: true
